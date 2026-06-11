@@ -17,7 +17,7 @@ function Lietotāju_saraksts() {
 
     }, [])
     return (
-        <>
+        < >
             <h1>Lietotāju saraksts</h1>
             {loading == true ? (
                 <Spinner animation="border" role="status">
@@ -28,19 +28,19 @@ function Lietotāju_saraksts() {
                     <table className="table table-bordered">
                         <tbody>
                             {usersList.map((user, i) => (
-                                <>
+                                
                                     <tr key={i}>
-                                        <td key={`${i}_1`}>{user.firstName}</td>
-                                        <td key={`${i}_2`}>{user.lastName}</td>
-                                        <td key={`${i}_3`}>{user.age}</td>
-                                        <td key={`${i}_4`}>{user.email}</td>
-                                        <td key={`${i}_5`}>{user.phone}</td>
-                                        <td key={`${i}_6`}>
+                                        <td >{user.firstName}</td>
+                                        <td >{user.lastName}</td>
+                                        <td >{user.age}</td>
+                                        <td >{user.email}</td>
+                                        <td >{user.phone}</td>
+                                        <td >
                                             <Link to={`/user/${user.id}`} className="btn btn-outline-primary">Rediģēt</Link>
                                         </td>
                                     </tr>
 
-                                </>
+                                
                             ))}
                         </tbody>
                     </table>
