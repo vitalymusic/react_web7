@@ -16,12 +16,22 @@ function Lietotāja_kartiņa() {
     },[])
 
 
-    return ( <>
-        <h1>{userData.firstName} {userData.lastName}</h1>
-        <img src={userData.image} />
-        <p>Vecums: {userData.age}</p>
-        <p>Epasts: {userData.email}</p>
-    </> );
+    return (
+         <>
+        {loading == true?(
+            <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+            </Spinner>
+        ):(
+        <div>
+            <h1>{userData.firstName} {userData.lastName}</h1>
+            <img src={userData.image} />
+            <p>Vecums: {userData.age}</p>
+            <p>Epasts: {userData.email}</p>
+        </div>   
+         )} 
+        </>
+    );
 }
 
 export default Lietotāja_kartiņa;
