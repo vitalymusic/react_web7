@@ -12,7 +12,7 @@ function Lietotāja_kartiņa() {
             fetch(`https://dummyjson.com/users/${userId}`)
             .then(res => res.json())
             .then(data=>setUserData(data))
-            .then(setLoading(false));
+            .then(()=>{setLoading(false)});
     },[])
 
 

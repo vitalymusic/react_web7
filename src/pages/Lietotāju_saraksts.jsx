@@ -10,20 +10,20 @@ function Lietotāju_saraksts() {
 
     useEffect(() => {
         // Fetch vaicājums
-        fetch('https://dummyjson.com/users')
+        fetch('https://dummyjson.com/users?limit=0')
             .then(res => res.json())
             .then(data => setUsersList(data.users))
-            .then(setLoading(false))
+            .then(()=>{setLoading(false)})
 
     }, [])
     return (
         < >
             <h1>Lietotāju saraksts</h1>
-            {loading == true ? (
+            {loading == true ? 
                 <Spinner animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
-            ) : (
+             : 
                 <Container>
                     <table className="table table-bordered">
                         <tbody>
@@ -45,7 +45,7 @@ function Lietotāju_saraksts() {
                         </tbody>
                     </table>
                 </Container>
-            )}
+            }
 
         </>);
 }
